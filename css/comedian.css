@@ -1,0 +1,337 @@
+/* 芸人ページ共通のスタイル */
+:root {
+    /* カラーテーマ1（ダウンタウン-松本用、後ほど他の芸人でも使用可） */
+    --color1: #6b7bff;
+    /* カラーテーマ2（ダウンタウン-浜田用、後ほど他の芸人でも使用可） */
+    --color2: #ffb86b; 
+}
+
+/* 戻るリンク */
+.back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--light-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--light-color);
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+/* プロフィール */
+.profile-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--dark-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-color1 .profile-image {
+    border: 3px solid var(--color1);
+}
+
+.profile-color2 .profile-image {
+    border: 3px solid var(--color2);
+}
+
+.profile-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.profile-color1 .profile-name {
+    color: var(--color1);
+}
+
+.profile-color2 .profile-name {
+    color: var(--color2);
+}
+
+.profile-detail {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+/* 番組一覧 */
+.show-list {
+    margin-bottom: 2rem;
+}
+
+.show-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.show-year {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.show-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.show-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 名言 */
+.quotes-section h3 {
+    margin-bottom: 1.5rem;
+}
+
+.quotes-color1 h3 {
+    color: var(--color1);
+}
+
+.quotes-color2 h3 {
+    color: var(--color2);
+}
+
+.quote-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-5px);
+}
+
+.quote-color1 {
+    border-left: 4px solid var(--color1);
+}
+
+.quote-color2 {
+    border-left: 4px solid var(--color2);
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+.quote-text::before {
+    content: """;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.2);
+    margin-right: 0.2rem;
+}
+
+.quote-text::after {
+    content: """;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.2);
+    margin-left: 0.2rem;
+}
+
+.quote-info {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* グラフィカルデザイン要素 */
+.graphical-recording {
+    position: relative;
+    margin: 2rem 0;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.graphical-recording::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(247, 255, 247, 0.5);
+    z-index: -1;
+}
+
+.doodle-arrow {
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 30' fill='none' stroke='%23ff6b6b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 15 C 20 5, 40 25, 60 15 L 75 15 M 70 10 L 75 15 L 70 20'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.connect-line {
+    position: absolute;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50' fill='none' stroke='%234ecdc4' stroke-width='2' stroke-linecap='round' stroke-dasharray='5,5'%3E%3Cpath d='M5 25 C 30 10, 70 40, 95 25'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 50px;
+    opacity: 0.7;
+}
+
+/* 活動休止・休養 */
+.event-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.event-color1 {
+    border-left: 4px solid var(--color1);
+}
+
+.event-color2 {
+    border-left: 4px solid var(--color2);
+}
+
+.event-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.event-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.event-color1 .event-title {
+    color: var(--color1);
+}
+
+.event-color2 .event-title {
+    color: var(--color2);
+}
+
+.event-detail {
+    line-height: 1.8;
+}
+
+.marker-highlight {
+    position: relative;
+    display: inline-block;
+}
+
+.marker-highlight::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: var(--accent-color);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.highlight-color1::after {
+    background-color: var(--color1);
+}
+
+.highlight-color2::after {
+    background-color: var(--color2);
+}
+
+/* 受賞歴 */
+.award-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    border-left: 3px solid var(--accent-color);
+}
+
+.award-year {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.award-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.award-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* まとめ */
+.highlight-box {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.highlight-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .profile-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .profile-info {
+        text-align: left;
+    }
+}
